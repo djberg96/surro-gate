@@ -1,3 +1,4 @@
+#ifdef HAVE_SYS_EPOLL_H
 #include "selector_ext.h"
 
 static VALUE mSurroGate = Qnil;
@@ -216,3 +217,4 @@ void Init_selector_ext() {
   rb_define_method(cSurroGate_Selector, "select", SurroGate_Selector_select, 1);
   rb_define_method(cSurroGate_Selector, "each_ready", SurroGate_Selector_each_ready, 0);
 }
+#endif
